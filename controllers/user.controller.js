@@ -67,5 +67,30 @@ exports.loginUser = asyncHandler (async (req,res) => {
         user,
         token
     })
+})
 
+exports.deleteUser = asyncHandler (async (req,res) => {
+    const user = await User.findByIdAndDelete(req.params.id)
+
+    if(!user){
+        throw new error("delete unsuccessfull", 401)
+    }
+
+    res.status(200).json({
+        success: true,
+        message: "account deleted successfully"
+    })
+})
+
+exports.getUsers = asyncHandler (async (req,res) => {
+    const user = await User.find()
+
+    if(!user){
+        throw new error("No users found", 401)
+    }
+
+    res.status(200).json({
+        success: true,
+        user
+    })
 })
