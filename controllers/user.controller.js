@@ -1,5 +1,4 @@
 const User = require("../model/user.schema");
-const app = require ("../app");
 const asyncHandler = require ("../utils/asyncHandler");
 const customError = require ("../utils/customError");
 const cookieOptions = require("../services/cookieOptions");
