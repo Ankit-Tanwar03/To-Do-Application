@@ -22,6 +22,4 @@ exports.createTask = asyncHandler (async (req,res) => {
         message: "task created",
         newtask
     })
-
-
 })
