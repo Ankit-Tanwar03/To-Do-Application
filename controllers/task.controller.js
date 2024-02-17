@@ -51,15 +51,15 @@ exports.deleteTask = asyncHandler (async (req,res) => {
     })
 })
 
-// exports.getAllTodo = asyncHandler (async (req,res) => {
-//     const getTodo = await ToDo.find()
+exports.getAllTask = asyncHandler (async (req,res) => {
+    const getTask = await Task.find()
 
-//     if(!getTodo){
-//         throw new customError("No ToDo found", 400)
-//     }
+    if(!getTask){
+        throw new customError("No Task found", 400)
+    }
 
-//     res.status(200).json({
-//         success: true,
-//         getTodo
-//     })
-// })
+    res.status(200).json({
+        success: true,
+        getTask
+    })
+})
