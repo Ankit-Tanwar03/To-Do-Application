@@ -37,25 +37,19 @@ exports.updateTask = asyncHandler (async (req,res) => {
     })
 })
 
-// exports.deleteToDo = asyncHandler (async (req,res) => {
+exports.deleteTask = asyncHandler (async (req,res) => {
     
-//     const deletedTodo = await ToDo.findByIdAndDelete(req.params.id) 
+    const deletedTask = await Task.findByIdAndDelete(req.params.id) 
 
-//     if(!deletedTodo){
-//         throw new customError("ToDo deletion failed", 400)
-//     }
+    if(!deletedTask){
+        throw new customError("Task deletion failed", 400)
+    }
 
-//     const deleteTasks = await Task.deleteMany(Task.TodoID)
-//     if(!deleteTasks){
-//         throw new customError("Task deletion failed", 400)
-//     }
-
-//     res.status(200).json({
-//         success: true,
-//         deletedTodo,
-//         deleteTasks
-//     })
-// })
+    res.status(200).json({
+        success: true,
+        deletedTask
+    })
+})
 
 // exports.getAllTodo = asyncHandler (async (req,res) => {
 //     const getTodo = await ToDo.find()
